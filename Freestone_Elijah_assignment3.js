@@ -5,8 +5,15 @@ Project 3
 9-10-12
 */
 
+var myCar = { //My Car Object
+    brand: "Subaru",
+    doors: 4,
+    running: true,
+    security: false
+};
+
 //Global Variables
-var start = "My car backfires with a loud bang as it sputters and dies. Looks like that caught all the Zombies attention! ",
+var start = "My " + myCar.brand + " backfires with a loud bang as it sputters and dies. Looks like that caught all the Zombies attention! ",
     tries = 3,
     booVar = true,
     array = ["blocks", "steam"]
@@ -14,7 +21,7 @@ var start = "My car backfires with a loud bang as it sputters and dies. Looks li
 
 var say = function(message) { console.log(message); }; //Console.log Function
 
-say(start);
+say(start); //With Call From My Car Object
 
 var startEngine = function(tries) { //Number Function
     var startTries = 1;
@@ -28,10 +35,36 @@ var startEngine = function(tries) { //Number Function
                 say(startTries + " tries. The engine roars back to life! ") };
         }; 
     say("Can't believe it only took " + startTries + " tries to get her going again!");
-return startTries;
+return triesTook;
 };
 
 var triesTook = startEngine(tries); //Number Function Output
+
+say("I gun it and head straight for the incoming hoard of Zombies. ");
+
+say("I plow through at least 30 of them and speed off towards safety. ");
+
+
+
+var damage = function(array) {
+    say("With the Zombies safely in my rearview, I can see " + array[1] + " pouring from under my hood through my trashed widshield");
+    say("Dang Zombies broke my radiator!");
+    say("We have 7 more blocks until the Warehouse Store but I don't think my crippled car will make it. ")
+    for (var blocks = 7; blocks > 2; blocks--) {
+        say(blocks + " blocks to go and still going strong.");
+    }
+};
+
+damage(array);
+
+
+
+myCar.running = function() { //Mutator
+    var no = false
+    return myCar.running
+};
+
+myCar.running(false);
 
 
 /*
@@ -44,6 +77,19 @@ var arrayFunc = function(array) { //Array Function
     return arrayOutput;
 };
 */
+//arrayFunc(array);
+
+
+var booFunc = function(booVar1, booVar2) { //Boolean Function
+    var booOut = (booVar1 || booVar2)
+        if (myCar.running && booVar) {
+            say("With 2 blocks left, my car makes a horrible screech as the engine seizes. ")
+        } else {
+            say("My car is still going strong! ")
+    } return booOut;
+};
+
+booFunc(true, false);
 
 
 //arrayFunc(arrayOutput);
