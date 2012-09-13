@@ -7,45 +7,54 @@ Project 3
 
 //Objects
 var myCar = { //My Car Object with Object Mutator
-    "brand":    "Subaru",
-    "doors":     4,
-    "running":   true,
-    "security":  false
+    "brand": "Subaru",
+    "doors": 4,
+    "running": true,
+    "security": false,
+    "booFunc": function(booVar1, booVar2) { //Boolean Function with mutator
+        myCar.running = false; //Object Mutator
+        var booOut = (booVar1 && booVar2)
+            if (myCar.running || booVar) {
+                say("With 2 blocks left, my car makes a horrible screech as the engine seizes. ")
+            } else {
+                say("My car is still going strong! ")
+        } return booOut;
+    }
 };
 
-myCar.running = false; //Object Mutator
+
 
 var myDog = { //My Dog Object for Prcedure and nested conditional
-    "name":   "Echo",
-    "breed":  "Blue Heeler ",
-    "age":     12,
-    "attack":  true
+    "name": "Echo",
+    "breed": "Blue Heeler ",
+    "age": 12,
+    "attack": true
 };
 
 this.getname = function() { //Accessor
-    return name; 
+    return name;
 };
 
 var myGun = { //My Gun Object for Function Method
-    "type":      "semi-auto handgun",
-    "bullets":    11,
+    "type": "semi-auto handgun",
+    "bullets": 11,
     "extraClips": false
 };
 
 var destination = { //Warehouse Store Object (JSON)
-    "where":     "Warehosue Store",
-    "size":      "large",
-    "secure":     true,
-    "exits":      3,
+    "where": "Warehosue Store",
+    "size": "large",
+    "secure": true,
+    "exits": 3,
     "ammenities": ["Weapons", " food", " supplies"]
 };
 
 //Global Variables
-var start =  "My " + myCar.brand + " backfires with a loud bang as it sputters and dies. Looks like that caught all the Zombies attention! ",
-    tries =   3,
-    booVar =  true,
-    array =   ["blocks", "steam"],
-    danger =  "yes",
+var start = "My " + myCar.brand + " backfires with a loud bang as it sputters and dies. Looks like that caught all the Zombies attention! ",
+    tries = 3,
+    booVar = true,
+    array = ["blocks", "steam"],
+    danger = "yes",
     end = "Safe at last!"
 ;
 
@@ -63,7 +72,7 @@ var startEngine = function(tries) { //Number Function
                 say(startTries + " tries. Nothing. ");
             } else {
                 say(startTries + " tries. The engine roars back to life! ") };
-        }; 
+        };
     say("Can't believe it only took " + startTries + " tries to get her going again!");
 return triesTook;
 };
@@ -85,16 +94,9 @@ var damage = function(array) {
 
 damage(array);
 
-var booFunc = function(booVar1, booVar2) { //Boolean Function with mutator
-    var booOut = (booVar1 && booVar2)
-        if (myCar.running || booVar) {
-            say("With 2 blocks left, my car makes a horrible screech as the engine seizes. ")
-        } else {
-            say("My car is still going strong! ")
-    } return booOut;
-};
 
-booFunc(); //Boolean Output
+
+myCar.booFunc(); //Boolean Output
 
 say("Looks like we're walking from here.");
 
