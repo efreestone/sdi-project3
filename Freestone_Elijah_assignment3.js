@@ -22,8 +22,6 @@ var myCar = { //My Car Object with Object Mutator
     }
 };
 
-
-
 var myDog = { //My Dog Object for Prcedure and nested conditional
     "name": "Echo",
     "breed": "Blue Heeler ",
@@ -38,7 +36,13 @@ this.getname = function() { //Accessor
 var myGun = { //My Gun Object for Function Method
     "type": "semi-auto handgun",
     "bullets": 11,
-    "extraClips": false
+    "extraClips": false,
+    "shootZombies": function() { //Function with Number return
+        var bullets = myGun.bullets;
+            for (var bullets = 10; bullets >= 0; bullets--) {
+        say("I shoot a Zombie. " + bullets + " bullets left.")
+        } return bullets
+    }
 };
 
 var destination = { //Warehouse Store Object (JSON)
@@ -114,14 +118,9 @@ var zombiesComing = function(danger) { //Procedure with accessor
 
 zombiesComing(danger);
 
-var shootZombies = function() { //Function with Number return
-    var bullets = myGun.bullets;
-    for (var bullets = 10; bullets >= 0; bullets--) {
-        say("I shoot a Zombie. " + bullets + " bullets left.")
-    } return bullets
-};
 
-shootZombies();
+
+myGun.shootZombies();
 
 say("No more bullets. Time to run! ");
 
