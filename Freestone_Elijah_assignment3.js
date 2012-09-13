@@ -12,10 +12,6 @@ var myCar = { //My Car Object with Object Mutator
     "running":   true,
     "security":  false
 };
-    
-this.getbrand = function() {
-        return brand; 
-};
 
 myCar.running = false; //Object Mutator
 
@@ -24,6 +20,10 @@ var myDog = { //My Dog Object for Prcedure and nested conditional
     "breed":  "Blue Heeler ",
     "age":     12,
     "attack":  true
+};
+
+this.getname = function() { //Accessor
+    return name; 
 };
 
 var myGun = { //My Gun Object for Function Method
@@ -102,7 +102,7 @@ say("We hear a loud crash as we're getting out of the car. ");
 
 say("Zombies are closing in fast! ");
 
-var zombiesComing = function(danger) { //Procedure
+var zombiesComing = function(danger) { //Procedure with accessor
     if (myDog.attack === true) {
         say(myDog.name + " pounces on a Zombie and rips it to shreds just before it bites me! ")
     } else {
