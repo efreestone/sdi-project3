@@ -50,6 +50,16 @@ var myGun = { //My Gun Object for Function Method
     }
 };
 
+var myCharacter = {
+    "name": "Eli",
+    "age": 28,
+    "badBack": true,
+    "interests": ["music", "cars", "technology"],
+    "this.getname": function () {
+        return name;
+    }
+};
+
 var destination = { //Warehouse Store Object (JSON)
     "where": "Warehosue Store",
     "size": "large",
@@ -69,8 +79,6 @@ var start = "My " + myCar.brand + " backfires with a loud bang as it sputters an
 
 var say = function(message) { console.log(message); }; //Console.log Function
 
-say(start); //With Call From My Car Object
-
 var startEngine = function(tries) { //Number Function
     var startTries = 1;
         say("I frantically turn the key trying to bring it back to life. ");
@@ -86,12 +94,6 @@ var startEngine = function(tries) { //Number Function
 return triesTook;
 };
 
-var triesTook = startEngine(tries); //Number Function Output
-
-say("I gun it and head straight for the incoming hoard of Zombies. ");
-
-say("I plow through at least 30 of them and speed off towards safety. ");
-
 var damage = function(array) {
     say("With the Zombies safely in my rearview, I can see " + array[1] + " pouring from under my hood through my trashed widshield");
     say("Dang Zombies broke my radiator!");
@@ -101,9 +103,17 @@ var damage = function(array) {
     }
 };
 
+say("Hi, my name is " + myCharacter.name);
+
+say(start); //With Call From My Car Object
+
+var triesTook = startEngine(tries); //Number Function Output
+
+say("I gun it and head straight for the incoming hoard of Zombies. ");
+
+say("I plow through at least 30 of them and speed off towards safety. ");
+
 damage(array);
-
-
 
 myCar.booFunc(); //Boolean Output
 
@@ -113,11 +123,7 @@ say("We hear a loud crash as we're getting out of the car. ");
 
 say("Zombies are closing in fast! ");
 
-
-
 myDog.zombiesComing(danger);
-
-
 
 myGun.shootZombies();
 
