@@ -5,39 +5,48 @@ Project 3
 9-10-12
 */
 
-var myCar = { //My Car Object
-    brand: "Subaru",
-    doors: 4,
-    running: true,
-    security: false
+//Objects
+var myCar = { //My Car Object with Object Mutator
+    "brand":    "Subaru",
+    "doors":     4,
+    "running":   true,
+    "security":  false
 };
-
-var myDog = { //My Dog Object
-    name: "Echo",
-    breed: "Blue Heeler ",
-    age: 12,
-    attack: true
-};
-
-var myGun = {
-    type: "semi-auto handgun",
-    bullets: 15
-};
-
-var warehouseStore = { //Warehouse Store Object (JSON)
-    size: "large",
-    secure: true,
-    exits: 3
+    
+this.getbrand = function() {
+        return brand; 
 };
 
 myCar.running = false; //Object Mutator
 
+var myDog = { //My Dog Object for Prcedure and nested conditional
+    "name":   "Echo",
+    "breed":  "Blue Heeler ",
+    "age":     12,
+    "attack":  true
+};
+
+var myGun = { //My Gun Object for Function Method
+    "type":      "semi-auto handgun",
+    "bullets":    11,
+    "extraClips": false
+};
+
+var destination = { //Warehouse Store Object (JSON)
+    "where":     "Warehosue Store",
+    "size":      "large",
+    "secure":     true,
+    "exits":      3,
+    "ammenities": ["Weapons", " food", " supplies"]
+};
+
 //Global Variables
-var start = "My " + myCar.brand + " backfires with a loud bang as it sputters and dies. Looks like that caught all the Zombies attention! ",
-    tries = 3,
-    booVar = true,
-    array = ["blocks", "steam"],
-    danger = "yes"
+var start =  "My " + myCar.brand + " backfires with a loud bang as it sputters and dies. Looks like that caught all the Zombies attention! ",
+    tries =   3,
+    booVar =  true,
+    array =   ["blocks", "steam"],
+    danger =  "yes",
+    end = "Safe at last!"
 ;
 
 var say = function(message) { console.log(message); }; //Console.log Function
@@ -68,7 +77,7 @@ say("I plow through at least 30 of them and speed off towards safety. ");
 var damage = function(array) {
     say("With the Zombies safely in my rearview, I can see " + array[1] + " pouring from under my hood through my trashed widshield");
     say("Dang Zombies broke my radiator!");
-    say("We have 7 more blocks until the Warehouse Store but I don't think my crippled car will make it. ")
+    say("We have 7 more " + array[0] + " until the Warehouse Store but I don't think my crippled car will make it. ")
     for (var blocks = 7; blocks > 2; blocks--) {
         say(blocks + " blocks to go and still going strong.");
     }
@@ -76,7 +85,7 @@ var damage = function(array) {
 
 damage(array);
 
-var booFunc = function(booVar1, booVar2) { //Boolean Function
+var booFunc = function(booVar1, booVar2) { //Boolean Function with mutator
     var booOut = (booVar1 && booVar2)
         if (myCar.running || booVar) {
             say("With 2 blocks left, my car makes a horrible screech as the engine seizes. ")
@@ -103,28 +112,19 @@ var zombiesComing = function(danger) { //Procedure
 
 zombiesComing(danger);
 
-var shootZombies = function() {
+var shootZombies = function() { //Function with Number return
     var bullets = myGun.bullets;
-    for (var bullets = 15; bullets >= 0; bullets--) {
+    for (var bullets = 10; bullets >= 0; bullets--) {
         say("I shoot a Zombie. " + bullets + " bullets left.")
     } return bullets
 };
 
 shootZombies();
 
-say("No more bullets. Time to run! ")
+say("No more bullets. Time to run! ");
 
+say("Echo and I run to the " + destination.where + " as fast as we can. Good thing Zombies aren't very fast! ");
 
+say("We have all we need. " + destination.ammenities);
 
-/*
-var arrayFunc = function(array) { //Array Function
-    var myArray = ["steam ", "blocks "];
-    for (var i=7, j=array.length; i < j; i--) {
-        say(array[i] + "used to " + myArray[i]);
-    }
-    var arrayOutput = arrayFunc(array);
-    return arrayOutput;
-};
-
-arrayFunc(array);
-*/
+say(end);
