@@ -19,6 +19,11 @@ var myDog = { //My Dog Object
     attack: true
 };
 
+var myGun = {
+    type: "semi-auto handgun",
+    bullets: 15
+};
+
 var warehouseStore = { //Warehouse Store Object (JSON)
     size: "large",
     secure: true,
@@ -97,6 +102,19 @@ var zombiesComing = function(danger) { //Procedure
 };
 
 zombiesComing(danger);
+
+var shootZombies = function() {
+    var bullets = myGun.bullets;
+    for (var bullets = 15; bullets >= 0; bullets--) {
+        say("I shoot a Zombie. " + bullets + " bullets left.")
+    } return bullets
+};
+
+shootZombies();
+
+say("No more bullets. Time to run! ")
+
+
 
 /*
 var arrayFunc = function(array) { //Array Function
