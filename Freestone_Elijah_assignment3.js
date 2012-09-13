@@ -26,12 +26,17 @@ var myDog = { //My Dog Object for Prcedure and nested conditional
     "name": "Echo",
     "breed": "Blue Heeler ",
     "age": 12,
-    "attack": true
+    "attack": true,
+    "zombiesComing": function() { //Procedure
+        if (myDog.attack === true) {
+            if (myDog.name === "Echo")
+            say(myDog.name + " pounces on a Zombie and rips it to shreds just before it bites me! ")
+        } else {
+            say("Must have been a cat. ")
+        }
+    }
 };
 
-this.getname = function() { //Accessor
-    return name;
-};
 
 var myGun = { //My Gun Object for Function Method
     "type": "semi-auto handgun",
@@ -108,15 +113,9 @@ say("We hear a loud crash as we're getting out of the car. ");
 
 say("Zombies are closing in fast! ");
 
-var zombiesComing = function(danger) { //Procedure with accessor
-    if (myDog.attack === true) {
-        say(myDog.name + " pounces on a Zombie and rips it to shreds just before it bites me! ")
-    } else {
-        say("Must have been a cat. ")
-    }
-};
 
-zombiesComing(danger);
+
+myDog.zombiesComing(danger);
 
 
 
