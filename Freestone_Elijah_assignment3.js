@@ -50,7 +50,7 @@ var myGun = { //My Gun Object for Function Method
     }
 };
 
-var myCharacter = {
+var myCharacter = { // My Character object with Accessor and string return
     "name": "Eli",
     "age": 28,
     "badBack": true,
@@ -65,7 +65,10 @@ var destination = { //Warehouse Store Object (JSON)
     "size": "large",
     "secure": true,
     "exits": 3,
-    "ammenities": ["Weapons", " food", " supplies"]
+    "ammenities": {
+        "weapons": true,
+        "supplies": ["cooking equipment", " food", " camping equipment", " sleeping area"]
+    }
 };
 
 //Global Variables
@@ -79,7 +82,7 @@ var start = "My " + myCar.brand + " backfires with a loud bang as it sputters an
 
 var say = function(message) { console.log(message); }; //Console.log Function
 
-var startEngine = function(tries) { //Number Function
+var startEngine = function(tries) { //Non-method Number Function
     var startTries = 1;
         say("I frantically turn the key trying to bring it back to life. ");
         say(startTries + " try. Nothing happens. ");
@@ -94,7 +97,7 @@ var startEngine = function(tries) { //Number Function
 return triesTook;
 };
 
-var damage = function(array) {
+var damage = function(array) { //Non-method Array Function with for loop
     say("With the Zombies safely in my rearview, I can see " + array[1] + " pouring from under my hood through my trashed widshield");
     say("Dang Zombies broke my radiator!");
     say("We have 7 more " + array[0] + " until the Warehouse Store but I don't think my crippled car will make it. ")
@@ -131,6 +134,6 @@ say("No more bullets. Time to run! ");
 
 say("Echo and I run to the " + destination.where + " as fast as we can. Good thing Zombies aren't very fast! ");
 
-say("We have all we need. " + destination.ammenities);
+say("We have all we need. " + destination.ammenities.supplies);
 
 say(end);
